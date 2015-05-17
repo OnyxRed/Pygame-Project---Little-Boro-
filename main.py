@@ -1,4 +1,4 @@
-__version__="0.1"
+__version__="0.01a"
 
 import pygame,sys
 from pygame.locals import*
@@ -32,7 +32,7 @@ class Env(object):
         self.events()
 
     def draw(self):
-        self.screen.blit(self.bg,pygame.Rect(0,0,width,height))
+        self.screen.blit(self.bg,pygame.Rect(0,0,self.width,self.height))
 
     def events(self):
         for event in pygame.event.get():
@@ -43,9 +43,8 @@ class Env(object):
     def update(self):
         pygame.display.update()
         self.clock.tick(50)
-
-if __name__=="__main__":
-    root=Env(bg=pygame.image.load("images/sky/sky.png"),children=[],width=1000,height=600)
+        
+root=Env(bg=pygame.image.load("images/sky/sky.png"),children=[],width=1000,height=600)
     
     
     
