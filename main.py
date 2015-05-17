@@ -21,7 +21,7 @@ class Object(object): #Generic class objects
 
     def draw(self,screen):
         if self.image is not None:
-            screen.blit(self.image[self.state],self.getRect())
+            screen.blit(self.image[self.state[0]][self.state[1]],self.getRect())
 
         else:
             pygame.draw.rect(screen,self.color,self.getRect())
