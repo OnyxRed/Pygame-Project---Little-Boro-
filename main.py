@@ -18,7 +18,7 @@ class Player(Object):
         super(Player,self).__init__(*arg,**kwargs)
 
 class Env(object):
-    def __init__(self, bg,children,width,height):
+    def __init__(self, bg,children,width,height,camera=None):
         self.screen=pygame.display.set_mode((width,height))
         self.bg=pygame.transform.scale(bg,(width,height))
         self.children=children
