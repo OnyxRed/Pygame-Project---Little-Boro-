@@ -18,9 +18,9 @@ class Player(Object):
         super(Player,self).__init__(*arg,**kwargs)
 
 class Env(object):
-    def __init__(self, bg,children):
+    def __init__(self, bg,children,width,height):
         self.screen=pygame.display.set_mode((width,height))
-        self.bg=bg
+        self.bg=pygame.transform.scale(bg,(width,height))
         self.children=children
         self.camera=camera
         self.width=width
@@ -45,7 +45,7 @@ class Env(object):
         self.clock.tick(50)
 
 if __name__=="__main__":
-    root=Env(bg=pygame.image.load("images/sky/sky.png"),children=[])
+    root=Env(bg=pygame.image.load("images/sky/sky.png"),children=[],width=1000,height=600)
     
     
     
