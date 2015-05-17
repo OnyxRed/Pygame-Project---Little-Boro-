@@ -65,7 +65,7 @@ class Env(object): #Created basic environment
         pygame.display.update()
         self.clock.tick(50)
         
-root=Env(bg=pygame.image.load("images/sky/sky.png"),children={"Player":Player(pos=(100,100),width=50,height=50,image=["images/boro/static.png"],state=0}],width=1000,height=600)
+root=Env(bg=pygame.image.load("images/sky/sky.png"),children={"Player":Player(pos=(100,100),width=50,height=50,image={"Static":["images/boro/static.png"]},state=("Static",0)}],width=1000,height=600)
 root.run()
     
     
