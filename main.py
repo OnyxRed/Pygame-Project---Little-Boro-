@@ -66,7 +66,7 @@ class Player(Object): #Player object
         self.root=False
         self.vector=(0,0)
         self.speed=3
-        self.jump=10
+        self.jump=100
 
     def update(self,master):
         if not self.root:
@@ -135,7 +135,7 @@ class Env(object): #Created basic environment
                     self.children["Player"].vector=(self.children["Player"].speed,0)
 
                 if event.key==K_UP:
-                    if self.children["Player"].root is None:
+                    if self.children["Player"].root is not False:
                         self.children["Player"].vector=(0,-self.children["Player"].jump)
 
             if event.type==KEYUP:
